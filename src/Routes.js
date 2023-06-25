@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import About from './pages/About';
-import Home from './pages/Home';
-import CarDetails from './pages/CarDetails';
-import CarBooking from './pages/CarBooking';
-import CarListing from './pages/CarListing';
-import Services from './pages/Service';
+import About from './pages/About/About';
+import Home from './pages/Home/Home';
+import CarDetails from './pages/CarDetails/CarDetails';
+import CarBooking from './pages/CarBooking/CarBooking';
+import CarListing from './pages/CarListing/CarListing';
+import Services from './pages/Service/Service';
+import Login from './pages/UserLogin/UserLogin';
 
 const RoutesFunc = () => {
   return (
@@ -17,6 +18,7 @@ const RoutesFunc = () => {
         <Route exact path="/booking" element={<CarBooking/>} />
         <Route exact path="/listing" element={<CarListing/>} />
         <Route exact path="/services" element={<Services/>} />
+        <Route exact path="/login" element={<Login/>} />
         {/* <Route component={NotFound} /> */}
       </Routes>
     

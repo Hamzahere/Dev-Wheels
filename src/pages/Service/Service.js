@@ -123,28 +123,28 @@ return (
         <div className="container py-5">
             <div className="owl-carousel vendor-carousel">
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-1.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-1.png")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-2.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-2.png")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-3.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-3.png")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-4.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-4.png")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-5.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-5.png")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-6.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-6.png")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-7.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-7.png")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-8.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-8.png")} alt=""/>
                 </div>
             </div>
         </div>
@@ -183,22 +183,22 @@ return (
                 <h4 className="text-uppercase text-light mb-4">Car Gallery</h4>
                 <div className="row mx-n1">
                     <div className="col-4 px-1 mb-2">
-                        <a href="#/"><img className="w-100" src={require("../assets/img/gallery-1.jpg")} alt=""/></a>
+                        <a href="#/"><img className="w-100" src={require("../../assets/img/gallery-1.jpg")} alt=""/></a>
                     </div>
                     <div className="col-4 px-1 mb-2">
-                        <a href="#/"><img className="w-100" src={require("../assets/img/gallery-2.jpg")} alt=""/></a>
+                        <a href="#/"><img className="w-100" src={require("../../assets/img/gallery-2.jpg")} alt=""/></a>
                     </div>
                     <div className="col-4 px-1 mb-2">
-                        <a href="#/"><img className="w-100" src={require("../assets/img/gallery-3.jpg")} alt=""/></a>
+                        <a href="#/"><img className="w-100" src={require("../../assets/img/gallery-3.jpg")} alt=""/></a>
                     </div>
                     <div className="col-4 px-1 mb-2">
-                        <a href="#/"><img className="w-100" src={require("../assets/img/gallery-4.jpg")} alt=""/></a>
+                        <a href="#/"><img className="w-100" src={require("../../assets/img/gallery-4.jpg")} alt=""/></a>
                     </div>
                     <div className="col-4 px-1 mb-2">
-                        <a href="#/"><img className="w-100" src={require("../assets/img/gallery-5.jpg")} alt=""/></a>
+                        <a href="#/"><img className="w-100" src={require("../../assets/img/gallery-5.jpg")} alt=""/></a>
                     </div>
                     <div className="col-4 px-1 mb-2">
-                        <a href="#/"><img className="w-100" src={require("../assets/img/gallery-6.jpg")} alt=""/></a>
+                        <a href="#/"><img className="w-100" src={require("../../assets/img/gallery-6.jpg")} alt=""/></a>
                     </div>
                 </div>
             </div>

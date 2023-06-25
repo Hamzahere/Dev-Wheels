@@ -8,7 +8,7 @@ const Home = () => {
         <div id="header-carousel" className="carousel slide" data-ride="carousel">
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img className="w-100" src={require("../assets/img/carousel-1.jpg")} alt=""/>
+                    <img className="w-100" src={require("../../assets/img/carousel-1.jpg")} alt=""/>
                     <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div className="p-3" style={{maxWidth: "900px"}}>
                             <h4 className="text-white text-uppercase mb-md-3">Rent A Car</h4>
@@ -18,7 +18,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="carousel-item">
-                    <img className="w-100" src={require("../assets/img/carousel-2.jpg")} alt=""/>
+                    <img className="w-100" src={require("../../assets/img/carousel-2.jpg")} alt=""/>
                     <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div className="p-3" style={{maxWidth: "900px"}}>
                             <h4 className="text-white text-uppercase mb-md-3">Rent A Car</h4>
@@ -47,7 +47,7 @@ const Home = () => {
             <h1 className="display-4 text-uppercase text-center mb-5">Welcome To <span className="text-primary">Dev Wheels</span></h1>
             <div className="row justify-content-center">
                 <div className="col-lg-10 text-center">
-                    <img className="w-75 mb-4" src={require("../assets/img/about.png")} alt=""/>
+                    <img className="w-75 mb-4" src={require("../../assets/img/about.png")} alt=""/>
                     <p>Justo et eos et ut takimata sed sadipscing dolore lorem, et elitr labore labore voluptua no rebum sed, stet voluptua amet sed elitr ea dolor dolores no clita. Dolores diam magna clita ea eos amet, amet rebum voluptua vero vero sed clita accusam takimata. Nonumy labore ipsum sea voluptua sea eos sit justo, no ipsum sanctus sanctus no et no ipsum amet, tempor labore est labore no. Eos diam eirmod lorem ut eirmod, ipsum diam sadipscing stet dolores elitr elitr eirmod dolore. Magna elitr accusam takimata labore, et at erat eirmod consetetur tempor eirmod invidunt est, ipsum nonumy at et.</p>
                 </div>
             </div>
@@ -181,7 +181,7 @@ const Home = () => {
             <div className="row">
                 <div className="col-lg-4 col-md-6 mb-2">
                     <div className="rent-item mb-4">
-                        <img className="img-fluid mb-4" src={require("../assets/img/car-rent-1.png")} alt=""/>
+                        <img className="img-fluid mb-4" src={require("../../assets/img/car-rent-1.png")} alt=""/>
                         <h4 className="text-uppercase mb-4">Mercedes Benz R3</h4>
                         <div className="d-flex justify-content-center mb-4">
                             <div className="px-2">
@@ -202,7 +202,7 @@ const Home = () => {
                 </div>
                 <div className="col-lg-4 col-md-6 mb-2">
                     <div className="rent-item active mb-4">
-                        <img className="img-fluid mb-4" src={require("../assets/img/car-rent-2.png")} alt=""/>
+                        <img className="img-fluid mb-4" src={require("../../assets/img/car-rent-2.png")} alt=""/>
                         <h4 className="text-uppercase mb-4">Mercedes Benz R3</h4>
                         <div className="d-flex justify-content-center mb-4">
                             <div className="px-2">
@@ -223,7 +223,7 @@ const Home = () => {
                 </div>
                 <div className="col-lg-4 col-md-6 mb-2">
                     <div className="rent-item mb-4">
-                        <img className="img-fluid mb-4" src={require("../assets/img/car-rent-3.png")} alt=""/>
+                        <img className="img-fluid mb-4" src={require("../../assets/img/car-rent-3.png")} alt=""/>
                         <h4 className="text-uppercase mb-4">Mercedes Benz R3</h4>
                         <div className="d-flex justify-content-center mb-4">
                             <div className="px-2">
@@ -244,7 +244,7 @@ const Home = () => {
                 </div>
                 <div className="col-lg-4 col-md-6 mb-2">
                     <div className="rent-item mb-4">
-                        <img className="img-fluid mb-4" src={require("../assets/img/car-rent-4.png")} alt=""/>
+                        <img className="img-fluid mb-4" src={require("../../assets/img/car-rent-4.png")} alt=""/>
                         <h4 className="text-uppercase mb-4">Mercedes Benz R3</h4>
                         <div className="d-flex justify-content-center mb-4">
                             <div className="px-2">
@@ -265,7 +265,7 @@ const Home = () => {
                 </div>
                 <div className="col-lg-4 col-md-6 mb-2">
                     <div className="rent-item mb-4">
-                        <img className="img-fluid mb-4" src={require("../assets/img/car-rent-5.png")} alt=""/>
+                        <img className="img-fluid mb-4" src={require("../../assets/img/car-rent-5.png")} alt=""/>
                         <h4 className="text-uppercase mb-4">Mercedes Benz R3</h4>
                         <div className="d-flex justify-content-center mb-4">
                             <div className="px-2">
@@ -286,7 +286,7 @@ const Home = () => {
                 </div>
                 <div className="col-lg-4 col-md-6 mb-2">
                     <div className="rent-item mb-4">
-                        <img className="img-fluid mb-4" src="../assets/img/car-rent-6.png" alt=""/>
+                        <img className="img-fluid mb-4" src="../../assets/img/car-rent-6.png" alt=""/>
                         <h4 className="text-uppercase mb-4">Mercedes Benz R3</h4>
                         <div className="d-flex justify-content-center mb-4">
                             <div className="px-2">
@@ -315,7 +315,7 @@ const Home = () => {
             <h1 className="display-4 text-uppercase text-center mb-5">Meet Our Team</h1>
             <div className="owl-carousel team-carousel position-relative" style={{"padding": "0 30px"}}>
                 <div className="team-item">
-                    <img className="img-fluid w-100" src={require("../assets/img/team-1.jpg")} alt=""/>
+                    <img className="img-fluid w-100" src={require("../../assets/img/team-1.jpg")} alt=""/>
                     <div className="position-relative py-4">
                         <h4 className="text-uppercase">Full Name</h4>
                         <p className="m-0">Designation</p>
@@ -327,7 +327,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="team-item">
-                    <img className="img-fluid w-100" src={require("../assets/img/team-2.jpg")} alt=""/>
+                    <img className="img-fluid w-100" src={require("../../assets/img/team-2.jpg")} alt=""/>
                     <div className="position-relative py-4">
                         <h4 className="text-uppercase">Full Name</h4>
                         <p className="m-0">Designation</p>
@@ -339,7 +339,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="team-item">
-                    <img className="img-fluid w-100" src={require("../assets/img/team-3.jpg")} alt=""/>
+                    <img className="img-fluid w-100" src={require("../../assets/img/team-3.jpg")} alt=""/>
                     <div className="position-relative py-4">
                         <h4 className="text-uppercase">Full Name</h4>
                         <p className="m-0">Designation</p>
@@ -351,7 +351,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="team-item">
-                    <img className="img-fluid w-100" src={require("../assets/img/team-4.jpg")} alt=""/>
+                    <img className="img-fluid w-100" src={require("../../assets/img/team-4.jpg")} alt=""/>
                     <div className="position-relative py-4">
                         <h4 className="text-uppercase">Full Name</h4>
                         <p className="m-0">Designation</p>
@@ -371,7 +371,7 @@ const Home = () => {
             <div className="row mx-0">
                 <div className="col-lg-6 px-0">
                     <div className="px-5 bg-secondary d-flex align-items-center justify-content-between" style={{"height": "350px"}}>
-                        <img className="img-fluid flex-shrink-0 ml-n5 w-50 mr-4" src={require("../assets/img/banner-left.png")} alt=""/>
+                        <img className="img-fluid flex-shrink-0 ml-n5 w-50 mr-4" src={require("../../assets/img/banner-left.png")} alt=""/>
                         <div className="text-right">
                             <h3 className="text-uppercase text-light mb-3">Want to be driver?</h3>
                             <p className="mb-4">Lorem justo sit sit ipsum eos lorem kasd, kasd labore</p>
@@ -386,7 +386,7 @@ const Home = () => {
                             <p className="mb-4">Lorem justo sit sit ipsum eos lorem kasd, kasd labore</p>
                             <a className="btn btn-primary py-2 px-4" href="/#">Start Now</a>
                         </div>
-                        <img className="img-fluid flex-shrink-0 mr-n5 w-50 ml-4" src={require("../assets/img/banner-right.png")} alt=""/>
+                        <img className="img-fluid flex-shrink-0 mr-n5 w-50 ml-4" src={require("../../assets/img/banner-right.png")} alt=""/>
                     </div>
                 </div>
             </div>
@@ -400,7 +400,7 @@ const Home = () => {
             <div className="owl-carousel testimonial-carousel">
                 <div className="testimonial-item d-flex flex-column justify-content-center px-4">
                     <div className="d-flex align-items-center justify-content-between mb-3">
-                        <img className="img-fluid ml-n4" src={require("../assets/img/testimonial-1.jpg")} alt="sss"/>
+                        <img className="img-fluid ml-n4" src={require("../../assets/img/testimonial-1.jpg")} alt="sss"/>
                         <h1 className="display-2 text-white m-0">
   <span className="sr-only">Quote: </span>
   <i className="fa fa-quote-right"></i>
@@ -412,7 +412,7 @@ const Home = () => {
                 </div>
                 <div className="testimonial-item d-flex flex-column justify-content-center px-4">
                     <div className="d-flex align-items-center justify-content-between mb-3">
-                        <img className="img-fluid ml-n4" src={require("../assets/img/testimonial-2.jpg")} alt=""/>
+                        <img className="img-fluid ml-n4" src={require("../../assets/img/testimonial-2.jpg")} alt=""/>
                         <h1 className="display-2 text-white m-0">
   <span className="sr-only">Quote: </span>
   <i className="fa fa-quote-right"></i>
@@ -424,7 +424,7 @@ const Home = () => {
                 </div>
                 <div className="testimonial-item d-flex flex-column justify-content-center px-4">
                     <div className="d-flex align-items-center justify-content-between mb-3">
-                        <img className="img-fluid ml-n4" src={require("../assets/img/testimonial-3.jpg")} alt=""/>
+                        <img className="img-fluid ml-n4" src={require("../../assets/img/testimonial-3.jpg")} alt=""/>
                         <h1 className="display-2 text-white m-0">
   <span className="sr-only">Quote: </span>
   <i className="fa fa-quote-right"></i>
@@ -436,7 +436,7 @@ const Home = () => {
                 </div>
                 <div className="testimonial-item d-flex flex-column justify-content-center px-4">
                     <div className="d-flex align-items-center justify-content-between mb-3">
-                        <img className="img-fluid ml-n4" src={require("../assets/img/testimonial-4.jpg")} alt=""/>
+                        <img className="img-fluid ml-n4" src={require("../../assets/img/testimonial-4.jpg")} alt=""/>
                         <h1 className="display-2 text-white m-0">
   <span className="sr-only">Quote: </span>
   <i className="fa fa-quote-right"></i>
@@ -518,28 +518,28 @@ const Home = () => {
         <div className="container py-5">
             <div className="owl-carousel vendor-carousel">
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/testimonial-2.jpg")} alt=""/>
+                    <img src={require("../../assets/img/testimonial-2.jpg")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-2.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-2.png")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-3.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-3.png")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-4.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-4.png")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-5.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-5.png")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-6.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-6.png")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-7.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-7.png")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-8.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-8.png")} alt=""/>
                 </div>
             </div>
         </div>
@@ -575,22 +575,22 @@ const Home = () => {
                 <h4 className="text-uppercase text-light mb-4">Car Gallery</h4>
                 <div className="row mx-n1">
                     <div className="col-4 px-1 mb-2">
-                        <a href="/#"><img className="w-100" src={require("../assets/img/gallery-1.jpg")} alt=""></img></a>
+                        <a href="/#"><img className="w-100" src={require("../../assets/img/gallery-1.jpg")} alt=""></img></a>
                     </div>
                     <div className="col-4 px-1 mb-2">
-                        <a href="/#"><img className="w-100" src={require("../assets/img/gallery-2.jpg")} alt=""/></a>
+                        <a href="/#"><img className="w-100" src={require("../../assets/img/gallery-2.jpg")} alt=""/></a>
                     </div>
                     <div className="col-4 px-1 mb-2">
-                        <a href="/#"><img className="w-100" src={require("../assets/img/gallery-3.jpg")} alt=""/></a>
+                        <a href="/#"><img className="w-100" src={require("../../assets/img/gallery-3.jpg")} alt=""/></a>
                     </div>
                     <div className="col-4 px-1 mb-2">
-                        <a href="/#"><img className="w-100" src={require("../assets/img/gallery-4.jpg")} alt=""/></a>
+                        <a href="/#"><img className="w-100" src={require("../../assets/img/gallery-4.jpg")} alt=""/></a>
                     </div>
                     <div className="col-4 px-1 mb-2">
-                        <a href="/#"><img className="w-100" src={require("../assets/img/gallery-5.jpg")} alt=""/></a>
+                        <a href="/#"><img className="w-100" src={require("../../assets/img/gallery-5.jpg")} alt=""/></a>
                     </div>
                     <div className="col-4 px-1 mb-2">
-                        <a href="/#"><img className="w-100" src={require("../assets/img/gallery-6.jpg")} alt=""/></a>
+                        <a href="/#"><img className="w-100" src={require("../../assets/img/gallery-6.jpg")} alt=""/></a>
                     </div>
                 </div>
             </div>

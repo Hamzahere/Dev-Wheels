@@ -29,16 +29,16 @@ return (
                     <h1 className="display-4 text-uppercase mb-5">Mercedes Benz R3</h1>
                     <div className="row mx-n2 mb-3">
                         <div className="col-md-3 col-6 px-2 pb-2">
-                            <img className="img-fluid w-100" src={require("../assets/img/gallery-1.jpg")} alt=""/>
+                            <img className="img-fluid w-100" src={require("../../assets/img/gallery-1.jpg")} alt=""/>
                         </div>
                         <div className="col-md-3 col-6 px-2 pb-2">
-                            <img className="img-fluid w-100" src={require("../assets/img/gallery-2.jpg")} alt=""/>
+                            <img className="img-fluid w-100" src={require("../../assets/img/gallery-2.jpg")} alt=""/>
                         </div>
                         <div className="col-md-3 col-6 px-2 pb-2">
-                            <img className="img-fluid w-100" src={require("../assets/img/gallery-3.jpg")} alt=""/>
+                            <img className="img-fluid w-100" src={require("../../assets/img/gallery-3.jpg")} alt=""/>
                         </div>
                         <div className="col-md-3 col-6 px-2 pb-2">
-                            <img className="img-fluid w-100" src={require("../assets/img/gallery-4.jpg")} alt=""/>
+                            <img className="img-fluid w-100" src={require("../../assets/img/gallery-4.jpg")} alt=""/>
                         </div>
                     </div>
                     <p>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna</p>
@@ -150,7 +150,7 @@ return (
             <h2 className="mb-4">Related Cars</h2>
             <div className="owl-carousel related-carousel position-relative" style={{"padding": "0 30px"}}>
                 <div className="rent-item">
-                    <img className="img-fluid mb-4" src={require("../assets/img/car-rent-1.png")} alt=""/>
+                    <img className="img-fluid mb-4" src={require("../../assets/img/car-rent-1.png")} alt=""/>
                     <h4 className="text-uppercase mb-4">Mercedes Benz R3</h4>
                     <div className="d-flex justify-content-center mb-4">
                         <div className="px-2">
@@ -169,7 +169,7 @@ return (
                     <a className="btn btn-primary px-3" href="#/">$99.00/Day</a>
                 </div>
                 <div className="rent-item">
-                    <img className="img-fluid mb-4" src={require("../assets/img/car-rent-2.png")} alt=""/>
+                    <img className="img-fluid mb-4" src={require("../../assets/img/car-rent-2.png")} alt=""/>
                     <h4 className="text-uppercase mb-4">Mercedes Benz R3</h4>
                     <div className="d-flex justify-content-center mb-4">
                         <div className="px-2">
@@ -188,7 +188,7 @@ return (
                     <a className="btn btn-primary px-3" href="#/">$99.00/Day</a>
                 </div>
                 <div className="rent-item">
-                    <img className="img-fluid mb-4" src={require("../assets/img/car-rent-3.png")} alt=""/>
+                    <img className="img-fluid mb-4" src={require("../../assets/img/car-rent-3.png")} alt=""/>
                     <h4 className="text-uppercase mb-4">Mercedes Benz R3</h4>
                     <div className="d-flex justify-content-center mb-4">
                         <div className="px-2">
@@ -207,7 +207,7 @@ return (
                     <a className="btn btn-primary px-3" href="#/">$99.00/Day</a>
                 </div>
                 <div className="rent-item">
-                    <img className="img-fluid mb-4" src={require("../assets/img/car-rent-4.png")} alt=""/>
+                    <img className="img-fluid mb-4" src={require("../../assets/img/car-rent-4.png")} alt=""/>
                     <h4 className="text-uppercase mb-4">Mercedes Benz R3</h4>
                     <div className="d-flex justify-content-center mb-4">
                         <div className="px-2">
@@ -236,28 +236,28 @@ return (
         <div className="container py-5">
             <div className="owl-carousel vendor-carousel">
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-1.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-1.png")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-2.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-2.png")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-3.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-3.png")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-4.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-4.png")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-5.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-5.png")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-6.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-6.png")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-7.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-7.png")} alt=""/>
                 </div>
                 <div className="bg-light p-4">
-                    <img src={require("../assets/img/vendor-8.png")} alt=""/>
+                    <img src={require("../../assets/img/vendor-8.png")} alt=""/>
                 </div>
             </div>
         </div>
@@ -296,22 +296,22 @@ return (
                 <h4 className="text-uppercase text-light mb-4">Car Gallery</h4>
                 <div className="row mx-n1">
                     <div className="col-4 px-1 mb-2">
-                        <a href="#/"><img className="w-100" src={require("../assets/img/gallery-1.jpg")} alt=""/></a>
+                        <a href="#/"><img className="w-100" src={require("../../assets/img/gallery-1.jpg")} alt=""/></a>
                     </div>
                     <div className="col-4 px-1 mb-2">
-                        <a href="#/"><img className="w-100" src={require("../assets/img/gallery-2.jpg")} alt=""/></a>
+                        <a href="#/"><img className="w-100" src={require("../../assets/img/gallery-2.jpg")} alt=""/></a>
                     </div>
                     <div className="col-4 px-1 mb-2">
-                        <a href="#/"><img className="w-100" src={require("../assets/img/gallery-3.jpg")} alt=""/></a>
+                        <a href="#/"><img className="w-100" src={require("../../assets/img/gallery-3.jpg")} alt=""/></a>
                     </div>
                     <div className="col-4 px-1 mb-2">
-                        <a href="#/"><img className="w-100" src={require("../assets/img/gallery-4.jpg")} alt=""/></a>
+                        <a href="#/"><img className="w-100" src={require("../../assets/img/gallery-4.jpg")} alt=""/></a>
                     </div>
                     <div className="col-4 px-1 mb-2">
-                        <a href="#/"><img className="w-100" src={require("../assets/img/gallery-5.jpg")} alt=""/></a>
+                        <a href="#/"><img className="w-100" src={require("../../assets/img/gallery-5.jpg")} alt=""/></a>
                     </div>
                     <div className="col-4 px-1 mb-2">
-                        <a href="#/"><img className="w-100" src={require("../assets/img/gallery-6.jpg")} alt=""/></a>
+                        <a href="#/"><img className="w-100" src={require("../../assets/img/gallery-6.jpg")} alt=""/></a>
                     </div>
                 </div>
             </div>
