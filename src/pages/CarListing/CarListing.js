@@ -10,7 +10,7 @@ import styles from './CarListing.module.css'; // Import the CSS module
 const CarListing = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const { carList, filteredCars, isLoading, error } = useSelector((state) => state.cars);
+    const { carList, filteredCars, isLoading, error,searchedForCars } = useSelector((state) => state.cars);
 
     const stateSaveAndNavigate = (car)=> {
         dispatch(selectCar(car));
@@ -38,7 +38,10 @@ const CarListing = () => {
     <div className="container pt-5 pb-3">
         <h1 className={`display-4 text-uppercase text-center mb-5 ${styles.textStyle}`}>Find Your Car</h1>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-            {(filteredCars.length > 0 ? filteredCars : carList).map((car, index) => {
+        {filteredCars.length === 0 && searchedForCars ? (
+                <p>No cars found.</p>
+            ) : (
+            (filteredCars.length > 0 ? filteredCars : carList).map((car, index) => {
                 return (
                     <div className="col mb-4">
                         <Card className="h-100">
@@ -68,7 +71,8 @@ const CarListing = () => {
                         </Card>
                     </div>
                 );
-            })}
+            })
+            )}
         </div>
     </div>
 </div>

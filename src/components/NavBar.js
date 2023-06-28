@@ -33,8 +33,8 @@ const NavBar = () => {
             }`}
           >
             <div className="navbar-nav ml-auto py-0">
-              <NavLink exact activeClassName="active" className="nav-item nav-link" to="/">Home</NavLink>
-              <NavLink exact activeClassName="active" className="nav-item nav-link" to="/about">About</NavLink>
+              <NavLink   className="nav-item nav-link" to="/">Home</NavLink>
+              <NavLink   className="nav-item nav-link" to="/about">About</NavLink>
 
               <div className={`nav-item dropdown ${dropdownOpen ? "show" : ""}`}>
                 <NavLink
@@ -50,8 +50,8 @@ const NavBar = () => {
                   }`}
                 >
                   <NavLink
-                    exact
-                    activeClassName="active"
+                    
+                   
                     to="/listing"
                     className="dropdown-item"
                     onClick={toggleDropdown}
@@ -59,8 +59,8 @@ const NavBar = () => {
                     Car Listing
                   </NavLink>
                   <NavLink
-                    exact
-                    activeClassName="active"
+                    
+                    
                     to="/details"
                     className="dropdown-item"
                     onClick={toggleDropdown}
@@ -68,8 +68,8 @@ const NavBar = () => {
                     Car Detail
                   </NavLink>
                   <NavLink
-                    exact
-                    activeClassName="active"
+                    
+                    
                     to="/booking"
                     className="dropdown-item"
                     onClick={toggleDropdown}
@@ -79,11 +79,11 @@ const NavBar = () => {
                 </div>
               </div>
 
-              <NavLink exact activeClassName="active" className="nav-item nav-link" to="/services">Services</NavLink>
+              <NavLink   className="nav-item nav-link" to="/services">Services</NavLink>
               
-              <NavLink exact activeClassName="active" className="nav-item nav-link" to="/contact">Contact</NavLink>
+              <NavLink   className="nav-item nav-link" to="/contact">Contact</NavLink>
 
-              <NavLink exact activeClassName="active" className="nav-item nav-link" to="/login">Login</NavLink>
+              <NavLink   className="nav-item nav-link" to="/login">Login</NavLink>
             </div>
           </div>
         </nav>
