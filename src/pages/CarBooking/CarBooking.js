@@ -66,85 +66,85 @@ const CarBooking = () =>{
 
 
     <!-- Detail Start --> */}
-    <div class="container-fluid pt-5">
-        <div class="container pt-5 pb-3">
-            <h1 class="display-4 text-uppercase mb-5">{name}</h1>
-            <div class="row align-items-center pb-2">
-                <div class="col-lg-6 mb-4">
-                    <img class="img-fluid" src={require("../../assets/img/bg-banner.jpg")} alt=""/>
+    <div className="container-fluid pt-5">
+        <div className="container pt-5 pb-3">
+            <h1 className="display-4 text-uppercase mb-5">{name}</h1>
+            <div className="row align-items-center pb-2">
+                <div className="col-lg-6 mb-4">
+                    <img className="img-fluid" src={require("../../assets/img/bg-banner.jpg")} alt=""/>
                 </div>
-                <div class="col-lg-6 mb-4">
-                    <h4 class="mb-2">${price}/Day</h4>
-                    <div class="d-flex mb-3">
-                        <h6 class="mr-2">Rating:</h6>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
+                <div className="col-lg-6 mb-4">
+                    <h4 className="mb-2">${price}/Day</h4>
+                    <div className="d-flex mb-3">
+                        <h6 className="mr-2">Rating:</h6>
+                        <div className="d-flex align-items-center justify-content-center mb-1">
+                            <small className="fa fa-star text-primary mr-1"></small>
+                            <small className="fa fa-star text-primary mr-1"></small>
+                            <small className="fa fa-star text-primary mr-1"></small>
+                            <small className="fa fa-star text-primary mr-1"></small>
+                            <small className="fa fa-star-half-alt text-primary mr-1"></small>
                             <small>(250)</small>
                         </div>
                     </div>
                     <p>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt</p>
-                    <div class="d-flex pt-1">
+                    <div className="d-flex pt-1">
                         <h6>Share on:</h6>
-                        <div class="d-inline-flex">
-                            <a class="px-2" href="#/"><i class="fab fa-facebook-f"></i></a>
-                            <a class="px-2" href="#/"><i class="fab fa-twitter"></i></a>
-                            <a class="px-2" href="#/"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="px-2" href="#/"><i class="fab fa-pinterest"></i></a>
+                        <div className="d-inline-flex">
+                            <a className="px-2" href="#/"><i className="fab fa-facebook-f"></i></a>
+                            <a className="px-2" href="#/"><i className="fab fa-twitter"></i></a>
+                            <a className="px-2" href="#/"><i className="fab fa-linkedin-in"></i></a>
+                            <a className="px-2" href="#/"><i className="fab fa-pinterest"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row mt-n3 mt-lg-0 pb-4">
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-car text-primary mr-2"></i>
+            <div className="row mt-n3 mt-lg-0 pb-4">
+                <div className="col-md-3 col-6 mb-2">
+                    <i className="fa fa-car text-primary mr-2"></i>
                     <span>{model}</span>
                 </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-cogs text-primary mr-2"></i>
+                <div className="col-md-3 col-6 mb-2">
+                    <i className="fa fa-cogs text-primary mr-2"></i>
                     <span>Automatic</span>
                 </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-road text-primary mr-2"></i>
+                <div className="col-md-3 col-6 mb-2">
+                    <i className="fa fa-road text-primary mr-2"></i>
                     <span>20km/liter</span>
                 </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-eye text-primary mr-2"></i>
+                <div className="col-md-3 col-6 mb-2">
+                    <i className="fa fa-eye text-primary mr-2"></i>
                     <span>GPS Navigation</span>
                 </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-car text-primary mr-2"></i>
+                <div className="col-md-3 col-6 mb-2">
+                    <i className="fa fa-car text-primary mr-2"></i>
                     <span>Model: 2015</span>
                 </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-cogs text-primary mr-2"></i>
+                <div className="col-md-3 col-6 mb-2">
+                    <i className="fa fa-cogs text-primary mr-2"></i>
                     <span>Automatic</span>
                 </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-road text-primary mr-2"></i>
+                <div className="col-md-3 col-6 mb-2">
+                    <i className="fa fa-road text-primary mr-2"></i>
                     <span>20km/liter</span>
                 </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-eye text-primary mr-2"></i>
+                <div className="col-md-3 col-6 mb-2">
+                    <i className="fa fa-eye text-primary mr-2"></i>
                     <span>GPS Navigation</span>
                 </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-car text-primary mr-2"></i>
+                <div className="col-md-3 col-6 mb-2">
+                    <i className="fa fa-car text-primary mr-2"></i>
                     <span>Model: 2015</span>
                 </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-cogs text-primary mr-2"></i>
+                <div className="col-md-3 col-6 mb-2">
+                    <i className="fa fa-cogs text-primary mr-2"></i>
                     <span>Automatic</span>
                 </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-road text-primary mr-2"></i>
+                <div className="col-md-3 col-6 mb-2">
+                    <i className="fa fa-road text-primary mr-2"></i>
                     <span>20km/liter</span>
                 </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-eye text-primary mr-2"></i>
+                <div className="col-md-3 col-6 mb-2">
+                    <i className="fa fa-eye text-primary mr-2"></i>
                     <span>GPS Navigation</span>
                 </div>
             </div>
@@ -371,63 +371,63 @@ const CarBooking = () =>{
 
 
     <!-- Footer Start --> */}
-    <div class="container-fluid bg-secondary py-5 px-sm-3 px-md-5" style={{"margin-top": "90px"}}>
-        <div class="row pt-5">
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-uppercase text-light mb-4">Get In Touch</h4>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-white mr-3"></i>123 Street, New York, USA</p>
-                <p class="mb-2"><i class="fa fa-phone-alt text-white mr-3"></i>+012 345 67890</p>
-                <p><i class="fa fa-envelope text-white mr-3"></i>info@example.com</p>
-                <h6 class="text-uppercase text-white py-2">Follow Us</h6>
-                <div class="d-flex justify-content-start">
-                    <a class="btn btn-lg btn-dark btn-lg-square mr-2" href="#/"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-lg btn-dark btn-lg-square mr-2" href="#/"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-lg btn-dark btn-lg-square mr-2" href="#/"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-lg btn-dark btn-lg-square" href="#/"><i class="fab fa-instagram"></i></a>
+    <div className="container-fluid bg-secondary py-5 px-sm-3 px-md-5" style={{"margin-top": "90px"}}>
+        <div className="row pt-5">
+            <div className="col-lg-3 col-md-6 mb-5">
+                <h4 className="text-uppercase text-light mb-4">Get In Touch</h4>
+                <p className="mb-2"><i className="fa fa-map-marker-alt text-white mr-3"></i>123 Street, New York, USA</p>
+                <p className="mb-2"><i className="fa fa-phone-alt text-white mr-3"></i>+012 345 67890</p>
+                <p><i className="fa fa-envelope text-white mr-3"></i>info@example.com</p>
+                <h6 className="text-uppercase text-white py-2">Follow Us</h6>
+                <div className="d-flex justify-content-start">
+                    <a className="btn btn-lg btn-dark btn-lg-square mr-2" href="#/"><i className="fab fa-twitter"></i></a>
+                    <a className="btn btn-lg btn-dark btn-lg-square mr-2" href="#/"><i className="fab fa-facebook-f"></i></a>
+                    <a className="btn btn-lg btn-dark btn-lg-square mr-2" href="#/"><i className="fab fa-linkedin-in"></i></a>
+                    <a className="btn btn-lg btn-dark btn-lg-square" href="#/"><i className="fab fa-instagram"></i></a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-uppercase text-light mb-4">Usefull Links</h4>
-                <div class="d-flex flex-column justify-content-start">
-                    <a class="text-body mb-2" href="#/"><i class="fa fa-angle-right text-white mr-2"></i>Private Policy</a>
-                    <a class="text-body mb-2" href="#/"><i class="fa fa-angle-right text-white mr-2"></i>Term & Conditions</a>
-                    <a class="text-body mb-2" href="#/"><i class="fa fa-angle-right text-white mr-2"></i>New Member Registration</a>
-                    <a class="text-body mb-2" href="#/"><i class="fa fa-angle-right text-white mr-2"></i>Affiliate Programme</a>
-                    <a class="text-body mb-2" href="#/"><i class="fa fa-angle-right text-white mr-2"></i>Return & Refund</a>
-                    <a class="text-body" href="#/"><i class="fa fa-angle-right text-white mr-2"></i>Help & FQAs</a>
+            <div className="col-lg-3 col-md-6 mb-5">
+                <h4 className="text-uppercase text-light mb-4">Usefull Links</h4>
+                <div className="d-flex flex-column justify-content-start">
+                    <a className="text-body mb-2" href="#/"><i className="fa fa-angle-right text-white mr-2"></i>Private Policy</a>
+                    <a className="text-body mb-2" href="#/"><i className="fa fa-angle-right text-white mr-2"></i>Term & Conditions</a>
+                    <a className="text-body mb-2" href="#/"><i className="fa fa-angle-right text-white mr-2"></i>New Member Registration</a>
+                    <a className="text-body mb-2" href="#/"><i className="fa fa-angle-right text-white mr-2"></i>Affiliate Programme</a>
+                    <a className="text-body mb-2" href="#/"><i className="fa fa-angle-right text-white mr-2"></i>Return & Refund</a>
+                    <a className="text-body" href="#/"><i className="fa fa-angle-right text-white mr-2"></i>Help & FQAs</a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-uppercase text-light mb-4">Car Gallery</h4>
-                <div class="row mx-n1">
-                    <div class="col-4 px-1 mb-2">
-                        <a href="#/"><img class="w-100" src={require("../../assets/img/gallery-1.jpg")} alt=""/></a>
+            <div className="col-lg-3 col-md-6 mb-5">
+                <h4 className="text-uppercase text-light mb-4">Car Gallery</h4>
+                <div className="row mx-n1">
+                    <div className="col-4 px-1 mb-2">
+                        <a href="#/"><img className="w-100" src={require("../../assets/img/gallery-1.jpg")} alt=""/></a>
                     </div>
-                    <div class="col-4 px-1 mb-2">
-                        <a href="#/"><img class="w-100" src={require("../../assets/img/gallery-2.jpg")} alt=""/></a>
+                    <div className="col-4 px-1 mb-2">
+                        <a href="#/"><img className="w-100" src={require("../../assets/img/gallery-2.jpg")} alt=""/></a>
                     </div>
-                    <div class="col-4 px-1 mb-2">
-                        <a href="#/"><img class="w-100" src={require("../../assets/img/gallery-3.jpg")} alt=""/></a>
+                    <div className="col-4 px-1 mb-2">
+                        <a href="#/"><img className="w-100" src={require("../../assets/img/gallery-3.jpg")} alt=""/></a>
                     </div>
-                    <div class="col-4 px-1 mb-2">
-                        <a href="#/"><img class="w-100" src={require("../../assets/img/gallery-4.jpg")} alt=""/></a>
+                    <div className="col-4 px-1 mb-2">
+                        <a href="#/"><img className="w-100" src={require("../../assets/img/gallery-4.jpg")} alt=""/></a>
                     </div>
-                    <div class="col-4 px-1 mb-2">
-                        <a href="#/"><img class="w-100" src={require("../../assets/img/gallery-5.jpg")} alt=""/></a>
+                    <div className="col-4 px-1 mb-2">
+                        <a href="#/"><img className="w-100" src={require("../../assets/img/gallery-5.jpg")} alt=""/></a>
                     </div>
-                    <div class="col-4 px-1 mb-2">
-                        <a href="#/"><img class="w-100" src={require("../../assets/img/gallery-6.jpg")} alt=""/></a>
+                    <div className="col-4 px-1 mb-2">
+                        <a href="#/"><img className="w-100" src={require("../../assets/img/gallery-6.jpg")} alt=""/></a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-uppercase text-light mb-4">Newsletter</h4>
-                <p class="mb-4">Volup amet magna clita tempor. Tempor sea eos vero ipsum. Lorem lorem sit sed elitr sed kasd et</p>
-                <div class="w-100 mb-3">
-                    <div class="input-group">
-                        <input type="text" class="form-control bg-dark border-dark" style={{"padding": "25px"}} placeholder="Your Email"/>
-                        <div class="input-group-append">
-                            <button class="btn btn-primary text-uppercase px-3">Sign Up</button>
+            <div className="col-lg-3 col-md-6 mb-5">
+                <h4 className="text-uppercase text-light mb-4">Newsletter</h4>
+                <p className="mb-4">Volup amet magna clita tempor. Tempor sea eos vero ipsum. Lorem lorem sit sed elitr sed kasd et</p>
+                <div className="w-100 mb-3">
+                    <div className="input-group">
+                        <input type="text" className="form-control bg-dark border-dark" style={{"padding": "25px"}} placeholder="Your Email"/>
+                        <div className="input-group-append">
+                            <button className="btn btn-primary text-uppercase px-3">Sign Up</button>
                         </div>
                     </div>
                 </div>
@@ -435,15 +435,15 @@ const CarBooking = () =>{
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-dark py-4 px-sm-3 px-md-5">
-        <p class="mb-2 text-center text-body">&copy; <a href="#/">Your Site Name</a>. All Rights Reserved.</p>
-        <p class="m-0 text-center text-body">Designed by <a href="https://htmlcodex.com">HTML Codex</a></p>
+    <div className="container-fluid bg-dark py-4 px-sm-3 px-md-5">
+        <p className="mb-2 text-center text-body">&copy; <a href="#/">Your Site Name</a>. All Rights Reserved.</p>
+        <p className="m-0 text-center text-body">Designed by <a href="https://htmlcodex.com">HTML Codex</a></p>
     </div>
     {/* <!-- Footer End -->
 
 
     <!-- Back to Top --> */}
-    <a href="#/" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    <a href="#/" className="btn btn-lg btn-primary btn-lg-square back-to-top"><i className="fa fa-angle-double-up"></i></a>
 
 
     {/* <!-- JavaScript Libraries --> */}

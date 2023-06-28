@@ -9,7 +9,8 @@ const initialState = {
   filteredCars: [],
   isLoading: false,
   error: null,
-  selectedCar:{}
+  selectedCar:{},
+  searchedForCars:false
   };
 
   export const fetchCars = createAsyncThunk('cars/fetchCars', async () => {
@@ -46,12 +47,59 @@ const initialState = {
       addCar: (state, action) => {
         state.cars.push(action.payload);
       },
+      // filterCars: (state, action) => {
+      //   const searchInput = action.payload;
+      //   state.filteredCars = state.carList.filter((car) =>
+      //     car.name.toLowerCase().includes(searchInput.toLowerCase())
+      //   );
+      // },
+      // filterCars: (state, action) => {
+      //   const { name, from, to } = action.payload;
+      
+      //   state.filteredCars = state.carList.filter((car) => {
+      //     //const carNameMatch = car.name.toLowerCase().includes(name.toLowerCase());
+      //     const fromTimestampMatch = from.timestampValue
+      //       ? car.availibility_one.from.seconds * 1000 >= Date.parse(from.timestampValue)
+      //       : true;
+      //     const toTimestampMatch = to.timestampValue
+      //       ? car.availibility_one.to.seconds * 1000 <= Date.parse(to.timestampValue)
+      //       : true;
+      
+      //     return fromTimestampMatch && toTimestampMatch;
+      //   });
+      // },
+
       filterCars: (state, action) => {
-        const searchInput = action.payload;
-        state.filteredCars = state.carList.filter((car) =>
-          car.name.toLowerCase().includes(searchInput.toLowerCase())
-        );
+        const { name, location, model, price, from, to } = action.payload;
+        const filteredCars = state.carList.filter((car) => {
+          const carNameMatch = !name || car.name.toLowerCase().includes(name.toLowerCase());
+          const locationMatch = location.length === 0 || car.locations.includes(location);
+          const modelMatch = !model || car.model.toLowerCase().includes(model.toLowerCase());
+          const priceMatch = !price || car.price === price;
+          const fromTimestampMatch = from.timestampValue
+            ? car.availibility_one.from.seconds * 1000 >= Date.parse(from.timestampValue)
+            : true;
+          const toTimestampMatch = to.timestampValue
+            ? car.availibility_one.to.seconds * 1000 <= Date.parse(to.timestampValue)
+            : true;
+      
+          return (
+            carNameMatch &&
+            locationMatch &&
+            modelMatch &&
+            priceMatch &&
+            fromTimestampMatch &&
+            toTimestampMatch
+          );
+        });
+      
+        // state.isLoading = true;
+        state.filteredCars = filteredCars.length > 0 ? filteredCars : [];
+        state.searchedForCars = true;
       },
+      
+      
+      
       selectCar: (state, action) => {
         state.selectedCar = action.payload;
       }
