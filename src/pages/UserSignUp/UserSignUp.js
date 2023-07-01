@@ -6,11 +6,14 @@ import { getAuth, signInWithPopup, FacebookAuthProvider, GoogleAuthProvider } fr
 import { useDispatch } from 'react-redux';
 import { setCurrentUser } from '../../store/userReducer';
 import { app } from '../../firebase/firebase';
+import { useNavigate } from "react-router-dom";
+import { message } from 'antd';
+
 
 const UserSignUp = () => {
 const dispatch = useDispatch();
   const auth = getAuth(app);
-
+  const navigate = useNavigate();
   const onFinish = (values) => {
     console.log('Received values:', values);
     // Here you can perform signup logic with the form values
@@ -28,9 +31,12 @@ const dispatch = useDispatch();
       // Dispatch the setCurrentUser action to update the user state in the UserReducer
       dispatch(setCurrentUser(user));
       // Handle successful login
+      navigate(`/`);
     } catch (error) {
       console.log('Firebase login error:', error);
       // Handle login error
+      // Display an error alert using Ant Design's message component
+    message.error('Login error. Please try again.');
     }
   };
 
