@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
 import styles from './UserLogin.module.css'; // Import the CSS module
+import { NavLink } from 'react-router-dom';
 const Login = () => {
   const onFinish = (values) => {
     console.log('Received values:', values);
@@ -43,7 +44,10 @@ const Login = () => {
             </Button>
           </Form.Item>
           <div className="signup-link">
-          Don't have an account? <Button type="link">Sign up</Button>
+          Don't have an account? 
+          <NavLink to="/signup" className="navbar-brand">
+          <Button type="link">Sign up</Button>
+          </NavLink>
         </div>
         </Form>
       </div>
