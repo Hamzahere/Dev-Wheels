@@ -9,12 +9,16 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     setCurrentUser: (state, action) => {
-      const { displayName, email, photoURL } = action.payload;
-      state.currentUser = {
-        displayName,
-        email,
-        photoURL,
-      };
+      if (action.payload === null) {
+        state.currentUser = null;
+      } else {
+        const { displayName, email, photoURL } = action.payload;
+        state.currentUser = {
+          displayName,
+          email,
+          photoURL,
+        };
+      }
     },
   },
 });

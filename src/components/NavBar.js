@@ -1,89 +1,146 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import styles from './components.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleUser, faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { auth } from '../firebase/firebase'; // Import the app instance from firebase.js
+import { setCurrentUser } from '../store/userReducer'; // Import the setCurrentUser action
 
 const NavBar = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [serviceDropdownOpen, setServiceDropdownOpen] = useState(false);
+  const [userDropdownOpen, setUserDropdownOpen] = useState(false);
+  const [carDropdownOpen, setCarDropdownOpen] = useState(false);
+  const { currentUser } = useSelector((state) => state.user);
+  const dispatch = useDispatch(); // Get the dispatch function
 
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
+  const toggleUserDropdown = () => {
+    setUserDropdownOpen(!userDropdownOpen);
+    setCarDropdownOpen(false); // Close the car dropdown
   };
 
-  const serviceToggle = () => {
-    setServiceDropdownOpen(!serviceDropdownOpen);
-  }
+  const toggleCarDropdown = () => {
+    setCarDropdownOpen(!carDropdownOpen);
+    setUserDropdownOpen(false); // Close the user dropdown
+  };
+
+  const handleLogout = async () => {
+    try {
+      await auth.signOut(); // Sign out the user using Firebase Auth
+      dispatch(setCurrentUser(null)); // Set the current user to null in Redux store
+      //history.push('/login'); // Redirect to the login page
+    } catch (error) {
+      console.log('Error logging out:', error);
+    }
+  };
 
   return (
     <div className="container-fluid position-relative nav-bar p-0">
-      <div className="position-relative px-lg-5" style={{ zIndex: "9" }}>
+      <div className="position-relative" style={{ zIndex: '9' }}>
         <nav className="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
           <NavLink to="/" className="navbar-brand">
-            <h1 className="text-uppercase text-primary mb-1">Dev Wheels</h1>
+            <h1 className="text-uppercase mb-1">Dev Wheels</h1>
           </NavLink>
           <button
             type="button"
             className="navbar-toggler"
-            onClick={toggleDropdown}
+            onClick={toggleCarDropdown}
           >
             <span className="navbar-toggler-icon"></span>
           </button>
           <div
             className={`collapse navbar-collapse justify-content-between px-3 ${
-              dropdownOpen ? "show" : ""
+              carDropdownOpen ? 'show' : ''
             }`}
           >
+            <div className="navbar-nav mx-auto py-0">
+              <NavLink className="nav-item nav-link text-uppercase" to="/">
+                Home
+              </NavLink>
+              <NavLink className="nav-item nav-link text-uppercase" to="/about">
+                About
+              </NavLink>
+
+              ...
+
+<div className={`nav-item dropdown ${carDropdownOpen ? 'show' : ''}`}>
+  <div
+    className="nav-link dropdown-toggle text-uppercase"
+    role="button"
+    onClick={toggleCarDropdown}
+  >
+    Cars
+  </div>
+  <div
+    className={`dropdown-menu rounded-0 m-0 ${carDropdownOpen ? 'show' : ''}`}
+  >
+    <NavLink
+      className="dropdown-item text-uppercase"
+      to="/listing"
+      onClick={toggleCarDropdown}
+    >
+      Car Listing
+    </NavLink>
+    {/* <NavLink
+      className="dropdown-item text-uppercase"
+      to="/details"
+      onClick={toggleCarDropdown}
+    >
+      Car Detail
+    </NavLink> */}
+    {/* <NavLink
+      className="dropdown-item text-uppercase"
+      to="/carbooking"
+      onClick={toggleCarDropdown}
+    >
+      Car Booking
+    </NavLink> */}
+  </div>
+</div>
+
+...
+
+
+              <NavLink className="nav-item nav-link text-uppercase" to="/services">
+                Services
+              </NavLink>
+
+              <NavLink className="nav-item nav-link text-uppercase" to="/contact">
+                Contact
+              </NavLink>
+            </div>
+
             <div className="navbar-nav ml-auto py-0">
-              <NavLink   className="nav-item nav-link" to="/">Home</NavLink>
-              <NavLink   className="nav-item nav-link" to="/about">About</NavLink>
-
-              <div className={`nav-item dropdown ${dropdownOpen ? "show" : ""}`}>
-                <NavLink
-                  to="/listing"
-                  className="nav-link dropdown-toggle"
-                  onClick={toggleDropdown}
-                >
-                  Cars
-                </NavLink>
-                <div
-                  className={`dropdown-menu rounded-0 m-0 ${
-                    dropdownOpen ? "show" : ""
-                  }`}
-                >
-                  <NavLink
-                    
-                   
-                    to="/listing"
-                    className="dropdown-item"
-                    onClick={toggleDropdown}
+              {currentUser !== null ? ( // Check if currentUser is not null
+                <div className="nav-item dropdown">
+                  <div
+                    className="nav-link dropdown-toggle"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded={userDropdownOpen}
+                    onClick={toggleUserDropdown}
                   >
-                    Car Listing
-                  </NavLink>
-                  <NavLink
-                    
-                    
-                    to="/details"
-                    className="dropdown-item"
-                    onClick={toggleDropdown}
+                    <FontAwesomeIcon icon={faCircleUser} size="2x" />
+                    <FontAwesomeIcon icon={faAngleDown} className="ml-1" />
+                  </div>
+                  <div
+                    className={`dropdown-menu dropdown-menu-right ${
+                      userDropdownOpen ? 'show' : ''
+                    }`}
                   >
-                    Car Detail
-                  </NavLink>
-                  <NavLink
-                    
-                    
-                    to="/booking"
-                    className="dropdown-item"
-                    onClick={toggleDropdown}
-                  >
-                    Car Booking
-                  </NavLink>
+                    <div className="dropdown-item">Your Account</div>
+                    <div className="dropdown-item">Your Bookings</div>
+                    <div className="dropdown-divider"></div>
+                    <div className="dropdown-item" onClick={handleLogout}>
+                      Logout
+                    </div>
+                  </div>
                 </div>
-              </div>
-
-              <NavLink   className="nav-item nav-link" to="/services">Services</NavLink>
-              
-              <NavLink   className="nav-item nav-link" to="/contact">Contact</NavLink>
-
-              <NavLink   className="nav-item nav-link" to="/login">Login</NavLink>
+              ) : (
+                <NavLink className="nav-item nav-link text-uppercase" to="/login">
+                  Login
+                </NavLink>
+              )}
             </div>
           </div>
         </nav>
