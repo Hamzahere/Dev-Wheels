@@ -9,7 +9,12 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     setCurrentUser: (state, action) => {
-      state.currentUser = action.payload;
+      const { displayName, email, photoURL } = action.payload;
+      state.currentUser = {
+        displayName,
+        email,
+        photoURL,
+      };
     },
   },
 });
