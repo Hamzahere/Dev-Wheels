@@ -8,6 +8,7 @@ import CarListing from './pages/CarListing/CarListing';
 import Services from './pages/Service/Service';
 import Login from './pages/UserLogin/UserLogin';
 import UserSignUp from './pages/UserSignUp/UserSignUp';
+import Booking from './pages/UserProfile/Bookings';
 
 
 const RoutesFunc = () => {
@@ -22,6 +23,7 @@ const RoutesFunc = () => {
         <Route exact path="/services" element={<Services/>} />
         <Route exact path="/login" element={<Login/>} />
         <Route exact path="/signup" element={<UserSignUp/>} />
+        <Route exact path="/bookings" element={<Booking/>} />
         {/* <Route component={NotFound} /> */}
       </Routes>
     

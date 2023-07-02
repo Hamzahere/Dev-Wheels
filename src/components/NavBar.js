@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import styles from './components.module.css';
+// import styles from './components.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { auth } from '../firebase/firebase'; // Import the app instance from firebase.js
@@ -129,7 +129,7 @@ const NavBar = () => {
                     }`}
                   >
                     <div className="dropdown-item">Your Account</div>
-                    <div className="dropdown-item">Your Bookings</div>
+                    <NavLink to="/bookings" className="dropdown-item">Your Bookings</NavLink>
                     <div className="dropdown-divider"></div>
                     <div className="dropdown-item" onClick={handleLogout}>
                       Logout

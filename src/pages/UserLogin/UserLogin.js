@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { setCurrentUser } from '../../store/userReducer';
 import { useNavigate } from "react-router-dom";
 import { message } from 'antd';
+import { fetchBooking } from '../../store/carReducer';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -29,6 +30,10 @@ const Login = () => {
       const user = result.user;
       // Dispatch the setCurrentUser action to update the user state in the UserReducer
       dispatch(setCurrentUser(user));
+
+      const email = 'hamzahere99@gmail.com'; // Replace with the user's email
+      dispatch(fetchBooking(email));
+      
       // Handle successful login
       navigate(`/`);
     } catch (error) {
