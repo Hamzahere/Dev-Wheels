@@ -46,7 +46,9 @@ const CarListing = () => {
                     <div className="col mb-4">
                         <Card className="h-100">
                             <div className="rent-item mb-4" style={{ marginLeft: "-10px" }}>
-                                <img className="img-fluid mb-4" src={require("../../assets/img/car-rent-1.png")} alt="" />
+                               
+                                {/* <img className="img-fluid mb-4" src={require("../../assets/img/car-rent-1.png")} alt="" /> */}
+                                <img className="img-fluid mb-4" src={car.imageURL} alt="" />
                                 <Card style={{ width: 250 }}>
                                     <div>
                                         <p className="">{car.name}</p>

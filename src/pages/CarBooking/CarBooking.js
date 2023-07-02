@@ -10,7 +10,8 @@ import { faStar,faGasPump,faCar,faLocationDot } from '@fortawesome/free-solid-sv
 const CarBooking = () => {
   const { Option } = Select;
   const { selectedCar } = useSelector((state) => state.cars);
-  let { configuration, price, name, locations, model, description,availibility_one } = selectedCar;
+  const { currentUser } = useSelector((state) => state.user);
+  let { configuration, price, name, locations, model, description,availibility_one,imageURL} = selectedCar;
   const dispatch = useDispatch();
   const { register, handleSubmit, formState: { errors } } = useForm();
   useEffect(() => {
@@ -40,6 +41,9 @@ console.log(availibility_one);
   }
 
   const onSubmit = (data) => {
+    if(currentUser!={}){
+      data.user = currentUser;
+    }
     console.log(data);
     makeCall(data); // Replace with your actual implementation of the makeCall function
   };
@@ -62,7 +66,7 @@ console.log(availibility_one);
           <h1 className="display-4 text-uppercase mb-5">{name}</h1>
           <div className="row align-items-center pb-2">
             <div className="col-lg-6 mb-4">
-              <img className="img-fluid" src={require("../../assets/img/bg-banner.jpg")} alt="" />
+              <img className="img-fluid" src={imageURL} alt="" />
             </div>
             <div className="col-lg-6 mb-4">
               <h4 className="mb-2">${price}/Day</h4>
