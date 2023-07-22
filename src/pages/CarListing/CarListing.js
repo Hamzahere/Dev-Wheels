@@ -58,27 +58,27 @@ const CarListing = () => {
                               className="rent-item mb-4"
                               style={{ marginLeft: "-10px" }}
                             >
-                              {/* <img className="img-fluid mb-4" src={require("../../assets/img/car-rent-1.png")} alt="" /> */}
                               <img
-                                className="img-fluid mb-4"
+                                style={{ height: "200px", width: "350px" }}
+                                className="mb-4"
                                 src={car.imageURL}
                                 alt=""
                               />
-                              <Card style={{ width: 250 }}>
-                                <div>
-                                  <p className="">{car.name}</p>
-                                  <div className="d-flex justify-content-center mb-4">
-                                    <div className="px-2">
-                                      <i className="fa fa-car text-primary mr-1"></i>
-                                      <span>{car.model}</span>
-                                    </div>
-                                    <div className="px-2 border-left border-right">
-                                      <i className="fa fa-cogs text-primary mr-1"></i>
-                                      <span>{car.configuration}</span>
-                                    </div>
+
+                              <div style={{ margin: "10px 0 0 0" }}>
+                                <p className="">{car.name}</p>
+                                <div className="d-flex justify-content-center ">
+                                  <div className="px-2">
+                                    <i className="fa fa-car text-primary mr-1"></i>
+                                    <span>{car.model}</span>
+                                  </div>
+                                  <div className="px-2 border-left border-right">
+                                    <i className="fa fa-cogs text-primary mr-1"></i>
+                                    <span>{car.configuration}</span>
                                   </div>
                                 </div>
-                              </Card>
+                              </div>
+
                               <div className="d-flex justify-content-center">
                                 <button
                                   className={`btn btn-primary px-3 ${styles.buttonStyle}`}
