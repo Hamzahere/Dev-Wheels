@@ -3,12 +3,14 @@ import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchCars, selectCar } from "../../store/carReducer";
-import { DatePicker, Card } from "antd";
+import { DatePicker, Card, Spin } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import styles from "./CarListing.module.css"; // Import the CSS module
 import SearchBar from "../../components/SearchBar";
 
 const CarListing = () => {
+  const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { carList, filteredCars, isLoading, error, searchedForCars } =
@@ -20,8 +22,9 @@ const CarListing = () => {
   };
   useEffect(() => {
     dispatch(fetchCars());
-    if (isLoading) {
-      return <p>Loading...</p>;
+    if (isLoading == true) {
+      //return <p>Loading...</p>;
+      console.log("Loading");
     }
 
     if (error) {
@@ -41,6 +44,7 @@ const CarListing = () => {
               >
                 Find Your Car
               </h1>
+              {isLoading && carList.length == 0 && <Spin indicator={antIcon} />}
               <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
                 {filteredCars.length === 0 && searchedForCars ? (
                   <p>No cars found.</p>

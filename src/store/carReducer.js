@@ -1,22 +1,28 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { app, db ,storage } from '../firebase/firebase';
-import { getFirestore, collection, query, where, getDocs, addDoc } from 'firebase/firestore/lite';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { app, db, storage } from "../firebase/firebase";
+import {
+  getFirestore,
+  collection,
+  query,
+  where,
+  getDocs,
+  addDoc,
+} from "firebase/firestore/lite";
 import { doc, setDoc } from "firebase/firestore";
-import { getDownloadURL, ref } from 'firebase/storage';
-
+import { getDownloadURL, ref } from "firebase/storage";
 
 const initialState = {
   carList: [],
   filteredCars: [],
-  isLoading: false,
+  isLoading: true,
   error: null,
   selectedCar: {},
   searchedForCars: false,
-  bookings:null
+  bookings: null,
 };
 
-export const fetchCars = createAsyncThunk('cars/fetchCars', async () => {
-  const carsCollection = collection(db, 'Cars');
+export const fetchCars = createAsyncThunk("cars/fetchCars", async () => {
+  const carsCollection = collection(db, "Cars");
   const carsSnapshot = await getDocs(carsCollection);
   const carsList = [];
 
@@ -28,10 +34,10 @@ export const fetchCars = createAsyncThunk('cars/fetchCars', async () => {
       model: carData.model,
       configuration: carData.configuration,
       price: carData.price,
-      availibility_one:carData.availibility_one,
-      locations:carData.locations,
-      description:carData.description,
-      imageURL: '', // Initialize imageURL as an empty string
+      availibility_one: carData.availibility_one,
+      locations: carData.locations,
+      description: carData.description,
+      imageURL: "", // Initialize imageURL as an empty string
     };
 
     if (carData.imageURL) {
@@ -40,7 +46,7 @@ export const fetchCars = createAsyncThunk('cars/fetchCars', async () => {
         const downloadURL = await getDownloadURL(imageRef);
         car.imageURL = downloadURL;
       } catch (error) {
-        console.log('Error getting image URL:', error);
+        console.log("Error getting image URL:", error);
       }
     }
 
@@ -50,48 +56,49 @@ export const fetchCars = createAsyncThunk('cars/fetchCars', async () => {
   return carsList;
 });
 
+export const createBooking = createAsyncThunk(
+  "cars/createBooking",
+  async (data) => {
+    try {
+      const bookingCollection = collection(db, "booking");
+      const newDocRef = await addDoc(bookingCollection, {
+        data,
+      });
 
-export const createBooking = createAsyncThunk('cars/createBooking', async (data) => {
-  try {
-
-
-    const bookingCollection = collection(db, 'booking');
-    const newDocRef = await addDoc(bookingCollection, {
-      data
-
-    });
-
-    const bookingId = newDocRef.id;
-    console.log(bookingId);
-    return bookingId;
-  } catch (error) {
-    throw new Error('Failed to create booking.');
+      const bookingId = newDocRef.id;
+      console.log(bookingId);
+      return bookingId;
+    } catch (error) {
+      throw new Error("Failed to create booking.");
+    }
   }
-});
+);
 
+export const fetchBooking = createAsyncThunk(
+  "booking/fetchBooking",
+  async (email) => {
+    try {
+      const bookingQuery = query(
+        collection(db, "booking"),
+        where("data.data.user.email", "==", email)
+      );
+      const bookingSnapshot = await getDocs(bookingQuery);
 
-export const fetchBooking = createAsyncThunk('booking/fetchBooking', async (email) => {
-  try {
-    const bookingQuery = query(collection(db, 'booking'), where('data.data.user.email', '==', email));
-    const bookingSnapshot = await getDocs(bookingQuery);
+      const bookingData = bookingSnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data().data,
+      }));
 
-    const bookingData = bookingSnapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data().data
-    }));
-
-    console.log("bookingData", bookingData);
-    return bookingData;
-  } catch (error) {
-    throw new Error('Failed to fetch booking.');
+      console.log("bookingData", bookingData);
+      return bookingData;
+    } catch (error) {
+      throw new Error("Failed to fetch booking.");
+    }
   }
-});
-
-
-
+);
 
 const carSlice = createSlice({
-  name: 'car',
+  name: "car",
   initialState,
   reducers: {
     addCar: (state, action) => {
@@ -101,15 +108,20 @@ const carSlice = createSlice({
     filterCars: (state, action) => {
       const { name, location, model, price, from, to } = action.payload;
       const filteredCars = state.carList.filter((car) => {
-        const carNameMatch = !name || car.name.toLowerCase().includes(name.toLowerCase());
-        const locationMatch = location.length === 0 || car.locations.includes(location);
-        const modelMatch = !model || car.model.toLowerCase().includes(model.toLowerCase());
+        const carNameMatch =
+          !name || car.name.toLowerCase().includes(name.toLowerCase());
+        const locationMatch =
+          location.length === 0 || car.locations.includes(location);
+        const modelMatch =
+          !model || car.model.toLowerCase().includes(model.toLowerCase());
         const priceMatch = !price || car.price === price;
         const fromTimestampMatch = from.timestampValue
-          ? car.availibility_one.from.seconds * 1000 >= Date.parse(from.timestampValue)
+          ? car.availibility_one.from.seconds * 1000 >=
+            Date.parse(from.timestampValue)
           : true;
         const toTimestampMatch = to.timestampValue
-          ? car.availibility_one.to.seconds * 1000 <= Date.parse(to.timestampValue)
+          ? car.availibility_one.to.seconds * 1000 <=
+            Date.parse(to.timestampValue)
           : true;
 
         return (
@@ -127,12 +139,11 @@ const carSlice = createSlice({
       state.searchedForCars = true;
     },
 
-
-
     selectCar: (state, action) => {
       state.selectedCar = action.payload;
-    }
-  }, extraReducers: (builder) => {
+    },
+  },
+  extraReducers: (builder) => {
     builder
       .addCase(fetchCars.pending, (state) => {
         state.isLoading = true;
