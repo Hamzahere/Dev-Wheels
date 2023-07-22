@@ -309,62 +309,7 @@ const Home = () => {
         </div>
     </div>
    
-    <div className="container-fluid py-5">
-        <div className="container py-5">
-            <h1 className="display-1 text-primary text-center">04</h1>
-            <h1 className="display-4 text-uppercase text-center mb-5">Meet Our Team</h1>
-            <div className="owl-carousel team-carousel position-relative" style={{"padding": "0 30px"}}>
-                <div className="team-item">
-                    <img className="img-fluid w-100" src={require("../../assets/img/team-1.jpg")} alt=""/>
-                    <div className="position-relative py-4">
-                        <h4 className="text-uppercase">Full Name</h4>
-                        <p className="m-0">Designation</p>
-                        <div className="team-social position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
-                            <a className="btn btn-lg btn-primary btn-lg-square mx-1" href="/#"><i className="fab fa-twitter"></i></a>
-                            <a className="btn btn-lg btn-primary btn-lg-square mx-1" href="/#"><i className="fab fa-facebook-f"></i></a>
-                            <a className="btn btn-lg btn-primary btn-lg-square mx-1" href="/#"><i className="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div className="team-item">
-                    <img className="img-fluid w-100" src={require("../../assets/img/team-2.jpg")} alt=""/>
-                    <div className="position-relative py-4">
-                        <h4 className="text-uppercase">Full Name</h4>
-                        <p className="m-0">Designation</p>
-                        <div className="team-social position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
-                            <a className="btn btn-lg btn-primary btn-lg-square mx-1" href="/#"><i className="fab fa-twitter"></i></a>
-                            <a className="btn btn-lg btn-primary btn-lg-square mx-1" href="/#"><i className="fab fa-facebook-f"></i></a>
-                            <a className="btn btn-lg btn-primary btn-lg-square mx-1" href="/#"><i className="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div className="team-item">
-                    <img className="img-fluid w-100" src={require("../../assets/img/team-3.jpg")} alt=""/>
-                    <div className="position-relative py-4">
-                        <h4 className="text-uppercase">Full Name</h4>
-                        <p className="m-0">Designation</p>
-                        <div className="team-social position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
-                            <a className="btn btn-lg btn-primary btn-lg-square mx-1" href="/#"><i className="fab fa-twitter"></i></a>
-                            <a className="btn btn-lg btn-primary btn-lg-square mx-1" href="/#"><i className="fab fa-facebook-f"></i></a>
-                            <a className="btn btn-lg btn-primary btn-lg-square mx-1" href="/#"><i className="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div className="team-item">
-                    <img className="img-fluid w-100" src={require("../../assets/img/team-4.jpg")} alt=""/>
-                    <div className="position-relative py-4">
-                        <h4 className="text-uppercase">Full Name</h4>
-                        <p className="m-0">Designation</p>
-                        <div className="team-social position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
-                            <a className="btn btn-lg btn-primary btn-lg-square mx-1" href="/#"><i className="fab fa-twitter"></i></a>
-                            <a className="btn btn-lg btn-primary btn-lg-square mx-1" href="/#"><i className="fab fa-facebook-f"></i></a>
-                            <a className="btn btn-lg btn-primary btn-lg-square mx-1" href="/#"><i className="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
    
     <div className="container-fluid py-5">
         <div className="container py-5">
@@ -393,62 +338,7 @@ const Home = () => {
         </div>
     </div>
    
-    <div className="container-fluid py-5">
-        <div className="container py-5">
-            <h1 className="display-1 text-primary text-center">05</h1>
-            <h1 className="display-4 text-uppercase text-center mb-5">Our Client's Say</h1>
-            <div className="owl-carousel testimonial-carousel">
-                <div className="testimonial-item d-flex flex-column justify-content-center px-4">
-                    <div className="d-flex align-items-center justify-content-between mb-3">
-                        <img className="img-fluid ml-n4" src={require("../../assets/img/testimonial-1.jpg")} alt="sss"/>
-                        <h1 className="display-2 text-white m-0">
-  <span className="sr-only">Quote: </span>
-  <i className="fa fa-quote-right"></i>
-</h1>
-                    </div>
-                    <h4 className="text-uppercase mb-2">Client Name</h4>
-                    <i className="mb-2">Profession</i>
-                    <p className="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
-                </div>
-                <div className="testimonial-item d-flex flex-column justify-content-center px-4">
-                    <div className="d-flex align-items-center justify-content-between mb-3">
-                        <img className="img-fluid ml-n4" src={require("../../assets/img/testimonial-2.jpg")} alt=""/>
-                        <h1 className="display-2 text-white m-0">
-  <span className="sr-only">Quote: </span>
-  <i className="fa fa-quote-right"></i>
-</h1>
-                    </div>
-                    <h4 className="text-uppercase mb-2">Client Name</h4>
-                    <i className="mb-2">Profession</i>
-                    <p className="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
-                </div>
-                <div className="testimonial-item d-flex flex-column justify-content-center px-4">
-                    <div className="d-flex align-items-center justify-content-between mb-3">
-                        <img className="img-fluid ml-n4" src={require("../../assets/img/testimonial-3.jpg")} alt=""/>
-                        <h1 className="display-2 text-white m-0">
-  <span className="sr-only">Quote: </span>
-  <i className="fa fa-quote-right"></i>
-</h1>
-                    </div>
-                    <h4 className="text-uppercase mb-2">Client Name</h4>
-                    <i className="mb-2">Profession</i>
-                    <p className="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
-                </div>
-                <div className="testimonial-item d-flex flex-column justify-content-center px-4">
-                    <div className="d-flex align-items-center justify-content-between mb-3">
-                        <img className="img-fluid ml-n4" src={require("../../assets/img/testimonial-4.jpg")} alt=""/>
-                        <h1 className="display-2 text-white m-0">
-  <span className="sr-only">Quote: </span>
-  <i className="fa fa-quote-right"></i>
-</h1>
-                    </div>
-                    <h4 className="text-uppercase mb-2">Client Name</h4>
-                    <i className="mb-2">Profession</i>
-                    <p className="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit sea sed</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     
     <div className="container-fluid py-5">
         <div className="container pt-5 pb-3">
@@ -514,36 +404,7 @@ const Home = () => {
         </div>
     </div>
   
-    <div className="container-fluid py-5">
-        <div className="container py-5">
-            <div className="owl-carousel vendor-carousel">
-                <div className="bg-light p-4">
-                    <img src={require("../../assets/img/testimonial-2.jpg")} alt=""/>
-                </div>
-                <div className="bg-light p-4">
-                    <img src={require("../../assets/img/vendor-2.png")} alt=""/>
-                </div>
-                <div className="bg-light p-4">
-                    <img src={require("../../assets/img/vendor-3.png")} alt=""/>
-                </div>
-                <div className="bg-light p-4">
-                    <img src={require("../../assets/img/vendor-4.png")} alt=""/>
-                </div>
-                <div className="bg-light p-4">
-                    <img src={require("../../assets/img/vendor-5.png")} alt=""/>
-                </div>
-                <div className="bg-light p-4">
-                    <img src={require("../../assets/img/vendor-6.png")} alt=""/>
-                </div>
-                <div className="bg-light p-4">
-                    <img src={require("../../assets/img/vendor-7.png")} alt=""/>
-                </div>
-                <div className="bg-light p-4">
-                    <img src={require("../../assets/img/vendor-8.png")} alt=""/>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     
     <div className="container-fluid bg-secondary py-5 px-sm-3 px-md-5" style={{"marginTop": "90px"}}>
         <div className="row pt-5">
@@ -618,19 +479,6 @@ const Home = () => {
 
     
     <a href="/#" className="btn btn-lg btn-primary btn-lg-square back-to-top"><i className="fa fa-angle-double-up"></i></a>
-
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    
-    <script src="js/main.js"></script>
 
   </>
 };
