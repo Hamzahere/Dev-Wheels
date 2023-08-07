@@ -19,6 +19,8 @@ const initialState = {
   selectedCar: {},
   searchedForCars: false,
   bookings: null,
+  currentPage: 1, // Initialize the current page to 1
+  itemsPerPage: 6, // Initialize the number of items per page to 6
 };
 
 export const fetchCars = createAsyncThunk("cars/fetchCars", async () => {
@@ -142,6 +144,13 @@ const carSlice = createSlice({
     selectCar: (state, action) => {
       state.selectedCar = action.payload;
     },
+    setCurrentPage: (state, action) => {
+      state.currentPage = action.payload;
+    },
+
+    setItemsPerPage: (state, action) => {
+      state.itemsPerPage = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -163,5 +172,11 @@ const carSlice = createSlice({
   },
 });
 
-export const { addCar, filterCars, selectCar } = carSlice.actions;
+export const {
+  addCar,
+  filterCars,
+  selectCar,
+  setCurrentPage,
+  setItemsPerPage,
+} = carSlice.actions;
 export default carSlice.reducer;

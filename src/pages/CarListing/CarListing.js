@@ -2,8 +2,13 @@ import { app, db } from "../../firebase/firebase";
 import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchCars, selectCar } from "../../store/carReducer";
-import { DatePicker, Card, Spin } from "antd";
+import {
+  fetchCars,
+  selectCar,
+  setCurrentPage,
+  setItemsPerPage,
+} from "../../store/carReducer";
+import { DatePicker, Card, Spin, Pagination } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import styles from "./CarListing.module.css"; // Import the CSS module
@@ -13,8 +18,15 @@ const CarListing = () => {
   const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { carList, filteredCars, isLoading, error, searchedForCars } =
-    useSelector((state) => state.cars);
+  const {
+    carList,
+    filteredCars,
+    isLoading,
+    error,
+    searchedForCars,
+    currentPage,
+    itemsPerPage,
+  } = useSelector((state) => state.cars);
 
   const stateSaveAndNavigate = (car) => {
     dispatch(selectCar(car));
@@ -32,6 +44,22 @@ const CarListing = () => {
     }
   }, [dispatch]);
 
+  const handlePageChange = (page, pageSize) => {
+    dispatch(setCurrentPage(page));
+  };
+
+  const handleItemsPerPageChange = (current, size) => {
+    dispatch(setCurrentPage(1));
+    dispatch(setItemsPerPage(size));
+  };
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = (filteredCars.length > 0 ? filteredCars : carList).slice(
+    indexOfFirstItem,
+    indexOfLastItem
+  );
+
   return (
     <>
       <body>
@@ -46,55 +74,71 @@ const CarListing = () => {
               </h1>
               {isLoading && carList.length == 0 && <Spin indicator={antIcon} />}
               <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-                {filteredCars.length === 0 && searchedForCars ? (
+                {currentItems.length === 0 && searchedForCars ? (
                   <p>No cars found.</p>
                 ) : (
-                  (filteredCars.length > 0 ? filteredCars : carList).map(
-                    (car, index) => {
-                      return (
-                        <div className="col mb-4">
-                          <Card className="h-100">
-                            <div
-                              className="rent-item mb-4"
-                              style={{ marginLeft: "-10px" }}
-                            >
-                              <img
-                                style={{ height: "200px", width: "350px" }}
-                                className="mb-4"
-                                src={car.imageURL}
-                                alt=""
-                              />
+                  currentItems.map((car, index) => {
+                    return (
+                      <div className="col mb-4">
+                        <Card className="h-100">
+                          <div
+                            className="rent-item mb-4"
+                            style={{ marginLeft: "-10px" }}
+                          >
+                            <img
+                              style={{ height: "200px", width: "350px" }}
+                              className="mb-4"
+                              src={car.imageURL}
+                              alt=""
+                            />
 
-                              <div style={{ margin: "10px 0 0 0" }}>
-                                <p className="">{car.name}</p>
-                                <div className="d-flex justify-content-center ">
-                                  <div className="px-2">
-                                    <i className="fa fa-car text-primary mr-1"></i>
-                                    <span>{car.model}</span>
-                                  </div>
-                                  <div className="px-2 border-left border-right">
-                                    <i className="fa fa-cogs text-primary mr-1"></i>
-                                    <span>{car.configuration}</span>
-                                  </div>
+                            <div style={{ margin: "10px 0 0 0" }}>
+                              <p className="">{car.name}</p>
+                              <div className="d-flex justify-content-center ">
+                                <div className="px-2">
+                                  <i className="fa fa-car text-primary mr-1"></i>
+                                  <span>{car.model}</span>
+                                </div>
+                                <div className="px-2 border-left border-right">
+                                  <i className="fa fa-cogs text-primary mr-1"></i>
+                                  <span>{car.configuration}</span>
                                 </div>
                               </div>
-
-                              <div className="d-flex justify-content-center">
-                                <button
-                                  className={`btn btn-primary px-3 ${styles.buttonStyle}`}
-                                  onClick={() => stateSaveAndNavigate(car)}
-                                >
-                                  ${car.price}/Day
-                                </button>
-                              </div>
                             </div>
-                          </Card>
-                        </div>
-                      );
-                    }
-                  )
+
+                            <div className="d-flex justify-content-center">
+                              <button
+                                className={`btn btn-primary px-3 ${styles.buttonStyle}`}
+                                onClick={() => stateSaveAndNavigate(car)}
+                              >
+                                ${car.price}/Day
+                              </button>
+                            </div>
+                          </div>
+                        </Card>
+                      </div>
+                    );
+                  })
                 )}
               </div>
+            </div>
+
+            <div className="d-flex justify-content-center my-3">
+              <Pagination
+                current={currentPage}
+                pageSize={itemsPerPage}
+                total={
+                  filteredCars.length > 0 ? filteredCars.length : carList.length
+                }
+                onChange={(page, pageSize) => handlePageChange(page, pageSize)}
+                showSizeChanger
+                onShowSizeChange={(current, size) =>
+                  handleItemsPerPageChange(current, size)
+                }
+                showTotal={(total, range) =>
+                  `${range[0]}-${range[1]} of ${total} cars`
+                }
+              />
             </div>
           </div>
         </div>
@@ -330,19 +374,6 @@ const CarListing = () => {
         >
           <i className="fa fa-angle-double-up"></i>
         </a>
-
-        {/* <!-- JavaScript Libraries --> */}
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="lib/tempusdominus/js/moment.min.js"></script>
-        <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-        <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-        {/* <!-- Template Javascript --> */}
-        <script src="js/main.js"></script>
       </body>
     </>
   );
