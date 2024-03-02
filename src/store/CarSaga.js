@@ -29,7 +29,12 @@ function* fetchCarsSaga() {
         id: doc.id,
         name: carData.name,
         model: carData.model,
-        // Add other properties as needed
+        configuration: carData.configuration,
+        price: carData.price,
+        availibility_one: carData.availibility_one,
+        locations: carData.locations,
+        description: carData.description,
+        imageURL: "", // Initialize imageURL as an empty string
       };
 
       if (carData.imageURL) {

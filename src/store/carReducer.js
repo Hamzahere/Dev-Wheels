@@ -23,24 +23,6 @@ const initialState = {
   itemsPerPage: 6, // Initialize the number of items per page to 6
 };
 
-export const createBooking = createAsyncThunk(
-  "cars/createBooking",
-  async (data) => {
-    try {
-      const bookingCollection = collection(db, "booking");
-      const newDocRef = await addDoc(bookingCollection, {
-        data,
-      });
-
-      const bookingId = newDocRef.id;
-      console.log(bookingId);
-      return bookingId;
-    } catch (error) {
-      throw new Error("Failed to create booking.");
-    }
-  }
-);
-
 export const fetchBooking = createAsyncThunk(
   "booking/fetchBooking",
   async (email) => {
@@ -86,6 +68,21 @@ const carSlice = createSlice({
       };
     },
     fetchCarsFailure(state, action) {
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload,
+      };
+    },
+    createBookingSuccess(state, action) {
+      return {
+        ...state,
+        bookings: action.bookingId,
+        isLoading: false,
+        error: null,
+      };
+    },
+    createBookingFailure(state, action) {
       return {
         ...state,
         isLoading: false,
@@ -149,5 +146,7 @@ export const {
   fetchCarsStart,
   fetchCarsSuccess,
   fetchCarsFailure,
+  createBookingSuccess,
+  createBookingFailure,
 } = carSlice.actions;
 export default carSlice.reducer;
