@@ -3,7 +3,7 @@ import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  fetchCars,
+  fetchCarsStart,
   selectCar,
   setCurrentPage,
   setItemsPerPage,
@@ -33,7 +33,8 @@ const CarListing = () => {
     navigate(`/booking`);
   };
   useEffect(() => {
-    dispatch(fetchCars());
+    console.log("Dispatching fetchCarsStart action");
+    dispatch(fetchCarsStart());
     if (isLoading == true) {
       //return <p>Loading...</p>;
       console.log("Loading");

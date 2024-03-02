@@ -23,41 +23,6 @@ const initialState = {
   itemsPerPage: 6, // Initialize the number of items per page to 6
 };
 
-export const fetchCars = createAsyncThunk("cars/fetchCars", async () => {
-  const carsCollection = collection(db, "Cars");
-  const carsSnapshot = await getDocs(carsCollection);
-  const carsList = [];
-
-  for (const doc of carsSnapshot.docs) {
-    const carData = doc.data();
-    const car = {
-      id: doc.id,
-      name: carData.name,
-      model: carData.model,
-      configuration: carData.configuration,
-      price: carData.price,
-      availibility_one: carData.availibility_one,
-      locations: carData.locations,
-      description: carData.description,
-      imageURL: "", // Initialize imageURL as an empty string
-    };
-
-    if (carData.imageURL) {
-      const imageRef = ref(storage, carData.imageURL);
-      try {
-        const downloadURL = await getDownloadURL(imageRef);
-        car.imageURL = downloadURL;
-      } catch (error) {
-        console.log("Error getting image URL:", error);
-      }
-    }
-
-    carsList.push(car);
-  }
-
-  return carsList;
-});
-
 export const createBooking = createAsyncThunk(
   "cars/createBooking",
   async (data) => {
@@ -106,6 +71,27 @@ const carSlice = createSlice({
     addCar: (state, action) => {
       state.cars.push(action.payload);
     },
+    fetchCarsStart(state) {
+      return {
+        ...state,
+        isLoading: true,
+        error: null,
+      };
+    },
+    fetchCarsSuccess(state, action) {
+      return {
+        ...state,
+        isLoading: false,
+        carList: action.payload,
+      };
+    },
+    fetchCarsFailure(state, action) {
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload,
+      };
+    },
 
     filterCars: (state, action) => {
       const { name, location, model, price, from, to } = action.payload;
@@ -152,24 +138,6 @@ const carSlice = createSlice({
       state.itemsPerPage = action.payload;
     },
   },
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchCars.pending, (state) => {
-        state.isLoading = true;
-        state.error = null;
-      })
-      .addCase(fetchCars.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.carList = action.payload;
-      })
-      .addCase(fetchCars.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.error.message;
-      })
-      .addCase(fetchBooking.fulfilled, (state, action) => {
-        state.bookings = action.payload;
-      });
-  },
 });
 
 export const {
@@ -178,5 +146,8 @@ export const {
   selectCar,
   setCurrentPage,
   setItemsPerPage,
+  fetchCarsStart,
+  fetchCarsSuccess,
+  fetchCarsFailure,
 } = carSlice.actions;
 export default carSlice.reducer;

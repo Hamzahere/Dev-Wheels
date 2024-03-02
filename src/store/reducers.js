@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
-// Example reducers
-import carReducer from './carReducer';
-import userReducer from './userReducer';
+// reducers
+import carReducer from "./carReducer";
+import userReducer from "./userReducer";
 
 const rootReducer = combineReducers({
   cars: carReducer,
