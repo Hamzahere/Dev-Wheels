@@ -19,4 +19,5 @@ RUN npm run build
 # Build the React app
 EXPOSE 3000
 
+CMD ["npm", "start"]
 #new commit for git webhooks and jenkins trigger 4.
